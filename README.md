@@ -1,4 +1,4 @@
-# TCC Impacta [Faixa de estoque de software (front-end)]
+# TCC Impacta [Stock-Track Software (front-end)]
 
 ## Necessary facilities:
 
