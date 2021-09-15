@@ -7,7 +7,8 @@
 ## Setup
 
 - `npm install`
+- `npm install --save jquery`
 
-## Comandos para execução
+## Commands for execution
 
 - `ng serve`
