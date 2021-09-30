@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { TarefasListaComponent } from './tarefas/components/tarefas-lista/tarefas-lista.component';
-import { TarefasCadastroComponent } from './tarefas/components/tarefas-cadastro/tarefas-cadastro.component';
+import { TarefasListaComponent } from './source_modules/product_screen/product_list/product-list.component';
+import { TarefasCadastroComponent } from './source_modules/product_screen/products/products.component';
 
 @NgModule({
   declarations: [
