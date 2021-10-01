@@ -20,7 +20,20 @@ export class TarefasListaComponent implements OnInit {
     obterTarefas() {
         this.tarefas = [
             {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 2'    }
+            {   nome: 'tarefa 2'    },
+            {   nome: 'tarefa 1'    },
+            {   nome: 'tarefa 1'    },
+            {   nome: 'tarefa 1'    },
+            {   nome: 'tarefa 1'    },
+            {   nome: 'tarefa 1'    },
+            {   nome: 'tarefa 1'    },
+            {   nome: 'tarefa 1'    },
+            {   nome: 'tarefa 1'    },
+            {   nome: 'tarefa 1'    },
+            {   nome: 'tarefa 1'    },
+            {   nome: 'tarefa 1'    },
+            {   nome: 'tarefa 1'    },
+            {   nome: 'tarefa 1'    },
         ];
     }
 }
