@@ -4,7 +4,7 @@ import { TarefasCadastroComponent } from './source_modules/product_screen/produc
 import { TarefasListaComponent } from './source_modules/product_screen/product_list/product-list.component';
 
 const routes: Routes = [
-  { path: '', component: TarefasListaComponent },
+  { path: '', component: TarefasListaComponent }, /*Chama a tela principal*/
   { path: 'product_screen', component: TarefasListaComponent },
   { path: 'product_screen/cadastrar', component: TarefasCadastroComponent },
   { path: 'product_screen/:id/editar', component: TarefasCadastroComponent },
