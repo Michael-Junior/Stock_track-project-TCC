@@ -1,1 +1,49 @@
-<p>tarefas-cadastro works!</p>
+<div class="card">
+
+    <!--cabeçalho-->
+    <div class="card-header">
+        Cadastro de Produtpos
+    </div>
+    <div class="card-body">
+        <!--formulário-->
+
+        <form>
+            <div class='form=group row mb-2'>
+                <label class="col-md-2 col-form-label" for="nome">Nome</label>
+                <div class="col-md7">
+                    <input class="form-control" type="text" id="nome" name="nome"
+                        placeholder="Informe o nome do produto" formControlName="nome">
+                </div>
+            </div>
+
+            <div class='form=group row mb-2'>
+                <label class="col-md-2 col-form-label" for="nome">Detalhes</label>
+                <div class="col-md7">
+                    <textarea name="detalhes" id="detalhes" rows="3" placeholder="Informe os dealhes do produto"
+                        formControlName="detalhes"></textarea>
+                </div>
+            </div>
+        </form>
+
+        <!--botã salvar/confirmar-->
+        <div class="form-group row mb-2">
+            <div class="offset-md-9 col-md-6">
+                <button type="submit" class="btn btn-primary mx-1">
+                    Salvar
+                </button>
+                <button type="button" class="btn btn-secondary mx-1">
+                    Cancelar
+                </button>
+                <button type="button" class="btn btn-danger mx-1">
+                    Excluir
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--alertas/error-->
+
+<div class="alert alert-danger" *ngif="errorMessage">
+    {{errorMessage}}
+</div>

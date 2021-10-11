@@ -1,24 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { TarefasListaComponent } from './source_modules/product_screen/product_list/product-list.component';
-import { TarefasCadastroComponent } from './source_modules/product_screen/products/products.component';
+import { productsListaComponent } from './source_modules/product_screen/product_list/product-list.component';
+import { productsCadastroComponent } from './source_modules/product_screen/products/products.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     
     NavbarComponent,
-    TarefasListaComponent,
-    TarefasCadastroComponent,
+    productsListaComponent,
+    productsCadastroComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,13 +1,13 @@
 import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TarefasCadastroComponent } from './source_modules/product_screen/products/products.component';
-import { TarefasListaComponent } from './source_modules/product_screen/product_list/product-list.component';
+import { productsCadastroComponent } from './source_modules/product_screen/products/products.component';
+import { productsListaComponent } from './source_modules/product_screen/product_list/product-list.component';
 
 const routes: Routes = [
-  { path: '', component: TarefasListaComponent }, /*Chama a tela principal*/
-  { path: 'product_screen', component: TarefasListaComponent },
-  { path: 'product_screen/cadastrar', component: TarefasCadastroComponent },
-  { path: 'product_screen/:id/editar', component: TarefasCadastroComponent },
+  { path: '', component: productsCadastroComponent }, /*Chama a tela principal*/
+  { path: 'product_screen', component: productsListaComponent },
+  { path: 'product_screen/cadastrar', component: productsCadastroComponent },
+  { path: 'product_screen/:id/editar', component: productsCadastroComponent },
 ];
 
 @NgModule({

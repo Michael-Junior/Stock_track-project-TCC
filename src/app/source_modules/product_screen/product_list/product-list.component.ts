@@ -1,39 +1,49 @@
 import { Component, OnInit } from "@angular/core";
 
+import { Product } from "../../models/products-model";
+import { ProductsService } from "../../services/products.service";
+
 @Component({
 
     selector: 'app.product_list',
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
-export class TarefasListaComponent implements OnInit {
+export class productsListaComponent implements OnInit {
+    products: Product[] = [];
+    msgError: String = '';
 
-
-    tarefas: any[] = [];
-
-    constructor() { }
+    constructor(private productsService: ProductsService) { }
 
     ngOnInit() {
-        this.obterTarefas();
+        this.getProducts();
     }
 
-    obterTarefas() {
-        this.tarefas = [
-            {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 2'    },
-            {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 1'    },
-            {   nome: 'tarefa 1'    },
-        ];
+    getProducts() {
+        this.productsService.getProducts().subscribe(
+            products => {
+                this.products = products
+            },
+            error => this.msgError = <any>error
+        )
+
+
+        /*this.products = [
+            {   nome: 'product 1'    },
+            {   nome: 'product 2'    },
+            {   nome: 'product 3'    },
+            {   nome: 'product 4'    },
+            {   nome: 'product 5'    },
+            {   nome: 'product 6'    },
+            {   nome: 'product 7'    },
+            {   nome: 'product 8'    },
+            {   nome: 'product 9'    },
+            {   nome: 'product 10'    },
+            {   nome: 'product 11'    },
+            {   nome: 'product 12'    },
+            {   nome: 'product 13'    },
+            {   nome: 'product 14'    },
+            {   nome: 'product 15'    },
+        ];*/
     }
 }
