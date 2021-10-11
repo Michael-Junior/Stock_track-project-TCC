@@ -6,8 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { productsListaComponent } from './source_modules/product_screen/product_list/product-list.component';
-import { productsCadastroComponent } from './source_modules/product_screen/products/products.component';
+import { productsListaComponent } from './source_modules/screens/product/list/product-list.component';
+import { productsCadastroComponent } from './source_modules/screens/product/form/products.component';
 
 
 @NgModule({

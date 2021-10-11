@@ -3,20 +3,25 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { Product } from 'src/app/source_modules/models/products-model';
-import { ProductsService } from 'src/app/source_modules/services/products.service';
+import { Product } from '../../../models/products-model';
+import { ProductsService } from '../../../services/product/products.service';
 
 @Component({
   selector: 'app.products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class FormComponent implements OnInit, OnDestroy {
+export class productsCadastroComponent implements OnInit, OnDestroy {
   errorMessage: string = '';
   pageTitle: string = 'Adicionar Produtos';
   formMode: string = '';
-  productForm!: FormGroup;
-  product!: Product;
+  productForm: any;
+  product: Product = {
+    id: '',
+    nome: '',
+    detalhes: '',
+    concluido: false
+  };
   validationMessages: { [Key: string]: { [key: string]: string } };
   private subscription: Subscription = new Subscription;
 

@@ -8,11 +8,25 @@
         <!--formulário-->
 
         <form novalidate (ngSubmit)=toSave() [formGroup]="productForm">
-            <div class='form=group row mb-2'>
-                <label class="col-md-2 col-form-label" for="nome">Nome</label>
+            <div class='form=group row mb-4'>
+                <label class="col-md-2 col-form-label" for="nome">Descrição do Produto</label>
                 <div class="col-md6">
-                    <input class="form-control" type="text" id="nome" name="nome"
+                    <input class="form-control mb-2" type="text" id="nome" name="nome"
                         placeholder="Informe o nome do produto" formControlName="nome">
+                </div>
+            </div>
+
+            <div class="col-xs-6 mb-3">
+                <div class="form-group">
+                    <label for="unidadeVolume">Unidade de Medida:</label>
+                    <select class="selectpicker" data-size="5" data-live-search="true" data-width="100%" name="unidadeVolume" required>
+                        <option selected disabled>Escolha uma opção</option>
+                        <option>UN</option>
+                        <option>LT</option>
+                        <option>CX</option>
+                        <option>PC</option>
+                        <option>PT</option>
+                    </select>
                 </div>
             </div>
 
