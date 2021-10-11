@@ -1,6 +1,6 @@
-export interface Tarefa {
-    id?: string,
+export interface Product {
+    id: string,
     nome: string,
     detalhes: string,
-    concluido?: boolean
+    concluido: boolean
 }

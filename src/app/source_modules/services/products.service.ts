@@ -2,42 +2,60 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, throwError, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators'
+import { environment } from 'src/environments/environment';
 
-import { Tarefa } from '../models/products-model';
+import { Product } from '../models/products-model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TarefasService {
+export class ProductsService {
 
-  private urlApi = 'http://localhost:5000/api/tarefas';
-  private jsonHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
+  private urlApi = `${environment.baseUrl}api/products`;
+  private jsonHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private http: HttpClient) { }
 
-  obterTerafas(): Observable<Tarefa[]> {
-    return this.http.get<Tarefa[]>(this.urlApi)
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.urlApi)
       .pipe(
-      catchError(this.tratarErro));
+      catchError(this.treatError));
   }
 
-  obterTerafa(id: string) {
+  getProduct(id: string): Observable<Product> {
 
+  if (id === '') {
+    return of(this.inicializeProduct());
   }
 
-  criarTarefa(tarefa: Tarefa) {
+  const urlId = `${this.urlApi}/${id}`
 
+  return this.http.get<Product>(urlId)
+      .pipe(
+      catchError(this.treatError));
   }
 
-  atualizarTarefa(tarefa: Tarefa) {
-
+  createProduct(Product: Product) {
+    return this.http.post<Product>(this.urlApi, Product, {headers: this.jsonHeaders})
+      .pipe(
+      catchError(this.treatError));
   }
 
-  excluirTarefa(id: string) {
-
+  updateProduct(Product: Product) {
+    const urlId = `${this.urlApi}/${Product.id}`;
+    return this.http.put<Product>(urlId, Product, {headers: this.jsonHeaders})
+      .pipe(
+      catchError(this.treatError));
   }
 
-  private tratarErro(err: any) {
+  deleteProduct(id: string) {
+    const urlId = `${this.urlApi}/${id}`;
+    return this.http.delete<Product>(urlId, {headers: this.jsonHeaders})
+      .pipe(
+      catchError(this.treatError));
+  }
+
+  private treatError(err: any) {
     let msgErro: string;
 
     if (err.error instanceof ErrorEvent) {
@@ -49,4 +67,12 @@ export class TarefasService {
     return throwError(msgErro);
   }
 
+  private inicializeProduct(): Product {
+    return {
+      id: '',
+      nome: '',
+      detalhes: '',
+      concluido: false
+    }
+  }
 }
