@@ -2,15 +2,15 @@
 
     <!--cabeçalho-->
     <div class="card-header">
-        Cadastro de Produtpos
+        {{pageTitle}}
     </div>
     <div class="card-body">
         <!--formulário-->
 
-        <form>
+        <form novalidate (ngSubmit)=toSave() [formGroup]="productForm">
             <div class='form=group row mb-2'>
                 <label class="col-md-2 col-form-label" for="nome">Nome</label>
-                <div class="col-md7">
+                <div class="col-md6">
                     <input class="form-control" type="text" id="nome" name="nome"
                         placeholder="Informe o nome do produto" formControlName="nome">
                 </div>
@@ -19,26 +19,31 @@
             <div class='form=group row mb-2'>
                 <label class="col-md-2 col-form-label" for="nome">Detalhes</label>
                 <div class="col-md7">
-                    <textarea name="detalhes" id="detalhes" rows="3" placeholder="Informe os dealhes do produto"
-                        formControlName="detalhes"></textarea>
+                    <textarea class="form-control" name="detalhes" id="detalhes" rows="3"
+                        placeholder="Informe os dealhes do produto" formControlName="detalhes"></textarea>
+                </div>
+            </div>
+
+
+            <!--botã salvar/confirmar-->
+            <div class="form-group row mb-2">
+                <div class="offset-md-8 col-md-4">
+                    <button type="submit" class="btn btn-outline-primary mx-1" type="submit"
+                        [title]="productForm.valid ? 'Salvar' : 'Desabilitado até que os dados sejam validos'"
+                        [disabled]='!productForm.valid'>
+                        Salvar
+                    </button>
+                    <button class="btn btn-outline-secondary mx-1" type="button" title="Cancelar"
+                        [routerLink]="['/products']">
+                        Cancelar
+                    </button>
+                    <button class="btn btn-outline-danger mx-1" *ngIf="pageTitle != 'Adicionar Produtos'" type="button"
+                        title="Excluir esse produto" (click)="deleteProduct()">
+                        Excluir
+                    </button>
                 </div>
             </div>
         </form>
-
-        <!--botã salvar/confirmar-->
-        <div class="form-group row mb-2">
-            <div class="offset-md-9 col-md-6">
-                <button type="submit" class="btn btn-primary mx-1">
-                    Salvar
-                </button>
-                <button type="button" class="btn btn-secondary mx-1">
-                    Cancelar
-                </button>
-                <button type="button" class="btn btn-danger mx-1">
-                    Excluir
-                </button>
-            </div>
-        </div>
     </div>
 </div>
 
