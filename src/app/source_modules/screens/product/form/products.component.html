@@ -1,45 +1,72 @@
 <div class="card">
 
-    <!--cabeçalho-->
     <div class="card-header">
         {{pageTitle}}
     </div>
     <div class="card-body">
-        <!--formulário-->
 
         <form novalidate (ngSubmit)=toSave() [formGroup]="productForm">
-            <div class='form=group row mb-4'>
-                <label class="col-md-2 col-form-label" for="nome">Descrição do Produto</label>
-                <div class="col-md6">
-                    <input class="form-control mb-2" type="text" id="nome" name="nome"
-                        placeholder="Informe o nome do produto" formControlName="nome">
+            <div class='row'>
+                <div class="col">
+                    <label class="col form-control-sm mb-9" for="nome">
+                        Nome Produto
+                    </label>
+                    <div class="col">
+                        <input class="form-control mb-2 form-control-sm" type="text" id="nome" name="nome"
+                            placeholder="Informe o nome do produto" formControlName="nome">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label class="col form-control-sm mb-9" for="descricao">
+                        Descrição Detalhada
+                    </label>
+                    <div class="col">
+                        <input class="form-control mb-2 form-control-sm" type="text" id="descricao" name="descricao"
+                            placeholder="Informe uma descrição detalhada do produto" formControlName="descricao">
+                    </div>
                 </div>
             </div>
 
-            <div class="col-xs-6 mb-3">
-                <div class="form-group">
-                    <label for="unidadeVolume">Unidade de Medida:</label>
-                    <select class="selectpicker" data-size="5" data-live-search="true" data-width="100%" name="unidadeVolume" required>
-                        <option selected disabled>Escolha uma opção</option>
-                        <option>UN</option>
-                        <option>LT</option>
-                        <option>CX</option>
-                        <option>PC</option>
-                        <option>PT</option>
-                    </select>
+            <div class="row mb-9">
+                <div class="col form-control-sm mx-2">
+                    <label for="unidadeVolume ">Unidade de Medida : </label>
+                    <div>
+                        <select class="selectpicker " data-size="4" data-live-search="true" data-width="100%"
+                            name="unidadeVolume" required>
+                            <option selected default>UN</option>
+                            <option>CX</option>
+                            <option>PT</option>
+                            <option>MT</option>
+                            <option>LT</option>
+                            <option>PC</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col form-control-sm mx-2">
+                    <label for="ativo">Ativo : </label>
+                    <div>
+                        <select class="selectpicker " data-size="4" data-live-search="true" data-width="100%"
+                            name="unidadeVolume" required>
+                            <option selected default>SIM</option>
+                            <option>NÃO</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
-            <div class='form=group row mb-2'>
-                <label class="col-md-2 col-form-label" for="nome">Detalhes</label>
-                <div class="col-md7">
-                    <textarea class="form-control" name="detalhes" id="detalhes" rows="3"
-                        placeholder="Informe os dealhes do produto" formControlName="detalhes"></textarea>
+            <div class='row col-md-4'>
+                <div class="col form-control-sm mx-1">
+                    <label class="col form-control-sm mb-9" for="precoVenda">
+                        Preço de Venda
+                    </label>
+                    <div class="col">
+                        <input class="form-control mb-2 form-control-sm" type="text" id="precoVenda" name="precoVenda"
+                            placeholder="R$ 0,00" formControlName="precoVenda">
+                    </div>
                 </div>
             </div>
 
-
-            <!--botã salvar/confirmar-->
             <div class="form-group row mb-2">
                 <div class="offset-md-8 col-md-4">
                     <button type="submit" class="btn btn-outline-primary mx-1" type="submit"
@@ -48,7 +75,7 @@
                         Salvar
                     </button>
                     <button class="btn btn-outline-secondary mx-1" type="button" title="Cancelar"
-                        [routerLink]="['/products']">
+                        [routerLink]="['/cadastro-de-produtos']">
                         Cancelar
                     </button>
                     <button class="btn btn-outline-danger mx-1" *ngIf="pageTitle != 'Adicionar Produtos'" type="button"
@@ -60,8 +87,6 @@
         </form>
     </div>
 </div>
-
-<!--alertas/error-->
 
 <div class="alert alert-danger" *ngif="errorMessage">
     {{errorMessage}}

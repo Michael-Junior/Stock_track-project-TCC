@@ -19,8 +19,12 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
   product: Product = {
     id: '',
     nome: '',
-    detalhes: '',
-    concluido: false
+    descricao: '',
+    unidadeMedida: '',
+    ativo: false,
+    custo: 0,
+    margemLucro: 0,
+    quantidade: 0
   };
   validationMessages: { [Key: string]: { [key: string]: string } };
   private subscription: Subscription = new Subscription;
@@ -56,7 +60,7 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
         const name = params.get('nome');
 
         if (id == null || id == '') {
-          const product: Product = { id: '', nome: '', detalhes: '', concluido: false };
+          const product: Product = { id: '', nome: '', descricao: '', unidadeMedida: '', ativo: false, custo: 0, margemLucro: 0, quantidade:0};
           this.showProduct(product);
         } else { this.getProduct(id) }
       }
@@ -89,7 +93,7 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
 
     this.productForm.patchValue({ //alterar valores do formulário
       nome: this.product.nome,
-      detalhes: this.product.detalhes,
+      detalhes: this.product.descricao,
     });
   }
 

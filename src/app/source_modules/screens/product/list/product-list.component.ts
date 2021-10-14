@@ -20,30 +20,21 @@ export class productsListaComponent implements OnInit {
     }
 
     getProducts() {
-        this.productsService.getProducts().subscribe(
+        /*this.productsService.getProducts().subscribe(
             products => {
                 this.products = products
             },
             error => this.msgError = <any>error
-        )
+        )*/
 
 
-        /*this.products = [
-            {   nome: 'product 1'    },
-            {   nome: 'product 2'    },
-            {   nome: 'product 3'    },
-            {   nome: 'product 4'    },
-            {   nome: 'product 5'    },
-            {   nome: 'product 6'    },
-            {   nome: 'product 7'    },
-            {   nome: 'product 8'    },
-            {   nome: 'product 9'    },
-            {   nome: 'product 10'    },
-            {   nome: 'product 11'    },
-            {   nome: 'product 12'    },
-            {   nome: 'product 13'    },
-            {   nome: 'product 14'    },
-            {   nome: 'product 15'    },
-        ];*/
+        this.products = [
+            {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
+            {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
+            {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
+            {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
+            {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
+            {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
+        ];
     }
 }

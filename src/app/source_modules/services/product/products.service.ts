@@ -71,8 +71,12 @@ export class ProductsService {
     return {
       id: '',
       nome: '',
-      detalhes: '',
-      concluido: false
+      descricao: '',
+      unidadeMedida: '',
+      ativo: true,
+      custo: 0.0,
+      margemLucro: 0.0,
+      quantidade: 0,
     }
   }
 }
