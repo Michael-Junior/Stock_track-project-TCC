@@ -93,7 +93,12 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
 
     this.productForm.patchValue({ //alterar valores do formulário
       nome: this.product.nome,
-      detalhes: this.product.descricao,
+      descricao: this.product.descricao,
+      unidadeMedida: this.product.unidadeMedida,
+      ativo: this.product.ativo,
+      custo: this.product.custo,
+      margemLucro: this.product.margemLucro,
+      quantidade: this.product.quantidade
     });
   }
 

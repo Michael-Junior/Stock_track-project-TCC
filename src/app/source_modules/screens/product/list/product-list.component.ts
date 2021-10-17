@@ -29,7 +29,7 @@ export class productsListaComponent implements OnInit {
 
 
         this.products = [
-            {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
+            {   id: '1', nome: 'product ffhdsfkdsfk  dfdsfdsjkhfkjds 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
             {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
             {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
             {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
