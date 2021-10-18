@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { productsListaComponent } from './source_modules/screens/product/list/product-list.component';
 import { productsCadastroComponent } from './source_modules/screens/product/form/products.component';
+import { LoginComponent } from './account/login/login.component';
+import { CreateAccountComponent } from './account/create-account/create-account.component';
+import { HomeComponent } from './layout/home/home.component';
+import { AuthenticationComponent } from './layout/authentication/authentication.component';
 
 
 @NgModule({
@@ -17,6 +21,10 @@ import { productsCadastroComponent } from './source_modules/screens/product/form
     NavbarComponent,
     productsListaComponent,
     productsCadastroComponent,
+    LoginComponent,
+    CreateAccountComponent,
+    HomeComponent,
+    AuthenticationComponent,
   ],
   imports: [
     BrowserModule,
