@@ -26,7 +26,7 @@ export class CreateAccountComponent implements OnInit {
       console.log(`usuário registrado: ${this.account}`);
       console.log(`Response: ${response}`);
       this.router.navigate(['login']);
-    } catch (err) {
+    } catch (err: any) {
       alert(err.error.error || err.error.message);
     }
   }
