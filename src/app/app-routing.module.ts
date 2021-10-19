@@ -15,9 +15,9 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       { path: '', component: BackgroundComponent },
-      { path: 'cadastro-de-produtos', component: productsListaComponent },
-      { path: 'cadastro-de-produtos/cadastrar', component: productsCadastroComponent },
-      { path: 'cadastro-de-produtos/:id/editar', component: productsCadastroComponent },
+      { path: 'product-registration', component: productsListaComponent },
+      { path: 'product-registration/cadastrar', component: productsCadastroComponent },
+      { path: 'product-registration/:id/editar', component: productsCadastroComponent },
     ],
     canActivate: [AuthGuard]
   },
