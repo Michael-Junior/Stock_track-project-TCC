@@ -13,6 +13,8 @@ import { CreateAccountComponent } from './account/create-account/create-account.
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
 
+import { httpInterceptorProviders } from './http-interceptors';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    httpInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
