@@ -27,7 +27,7 @@ export class CreateAccountComponent implements OnInit {
       console.log(`Response: ${response}`);
       this.router.navigate(['login']);
     } catch (err) {
-      console.log(err);
+      alert(err.error.error || err.error.message);
     }
   }
 }
