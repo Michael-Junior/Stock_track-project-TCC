@@ -27,4 +27,15 @@ export class AccountService {
     const token = window.localStorage.getItem('token');
     return token;
   }
+
+  async getProducts(): Promise<any> {
+    const token = window.localStorage.getItem('token');
+    return await this.http
+      .get(`${environment.baseUrl}/api/saida/produtos`, {
+        headers: {
+          Authorization: 'Bearer ' + token,
+        },
+      })
+      .toPromise();
+  }
 }
