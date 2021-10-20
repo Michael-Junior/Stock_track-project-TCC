@@ -1,0 +1,63 @@
+<link
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+  crossorigin="anonymous"
+/>
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <div>
+        <a class="nav-link disabled" href="#">Movimentar Saída de Produto</a>
+      </div>
+      <div class="nav-item">
+        <button
+          type="button"
+          class="btn btn-primary"
+          [routerLink]="['/saida-produtos/registrar']"
+        >
+          Registrar Saída de Produto
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nome Produto</th>
+          <th>Lote</th>
+          <th>Quantidade</th>
+          <th>Preço</th>
+          <th>Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>
+            {{ product.id }}
+          </td>
+          <td>
+            {{ product.nome }}
+          </td>
+          <td>
+            {{ product.lote }}
+          </td>
+          <td>
+            {{ product.quantidade }}
+          </td>
+          <td>
+            {{ product.precoVenda }}
+          </td>
+          <td>
+            <button type="button" class="btn btn-outline-primary btn-sm">
+              <span class="glyphicon glyphicon-edit"></span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

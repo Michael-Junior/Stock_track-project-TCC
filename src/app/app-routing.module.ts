@@ -8,6 +8,8 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
 import { LoginComponent } from './account/login/login.component';
 import { CreateAccountComponent } from './account/create-account/create-account.component';
 import { AuthGuard } from './account/shared/auth.guard';
+import { SaidaProdutosComponent } from './saida-produtos/saida-produtos.component';
+import { RegistrarSaidaComponent } from './saida-produtos/registrar-saida/registrar-saida.component';
 
 const routes: Routes = [
   {
@@ -16,25 +18,33 @@ const routes: Routes = [
     children: [
       { path: '', component: BackgroundComponent },
       { path: 'cadastro-de-produtos', component: productsListaComponent },
-      { path: 'cadastro-de-produtos/cadastrar', component: productsCadastroComponent },
-      { path: 'cadastro-de-produtos/:id/editar', component: productsCadastroComponent },
+      {
+        path: 'cadastro-de-produtos/cadastrar',
+        component: productsCadastroComponent,
+      },
+      {
+        path: 'cadastro-de-produtos/:id/editar',
+        component: productsCadastroComponent,
+      },
+      { path: 'saida-produtos', component: SaidaProdutosComponent },
+      { path: 'saida-produtos/registrar', component: RegistrarSaidaComponent },
     ],
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
 
   {
     path: '',
     component: AuthenticationComponent,
     children: [
-      { path: '', redirectTo: 'login', pathMatch: 'full'},
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
-      { path: 'create-account', component: CreateAccountComponent }
-    ]
-  }
+      { path: 'create-account', component: CreateAccountComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

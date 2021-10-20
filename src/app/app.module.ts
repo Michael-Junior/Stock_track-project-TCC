@@ -12,6 +12,8 @@ import { LoginComponent } from './account/login/login.component';
 import { CreateAccountComponent } from './account/create-account/create-account.component';
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
+import { SaidaProdutosComponent } from './saida-produtos/saida-produtos.component';
+import { RegistrarSaidaComponent } from './saida-produtos/registrar-saida/registrar-saida.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
     CreateAccountComponent,
     HomeComponent,
     AuthenticationComponent,
+    SaidaProdutosComponent,
+    RegistrarSaidaComponent,
   ],
   imports: [
     BrowserModule,

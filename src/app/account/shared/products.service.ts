@@ -5,27 +5,10 @@ import { environment } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root',
 })
-export class AccountService {
+export class ProductService {
   constructor(private http: HttpClient) {}
 
-  async login(user: any) {
-    const result = await this.http
-      .post<any>(`${environment.baseUrl}/auth/login`, user)
-      .toPromise();
-    if (result && result.token) {
-      window.localStorage.setItem('token', result.token);
-      return true;
-    }
-    return false;
-  }
-
-  async createAccount(account: any) {
-    await this.http
-      .post(`${environment.baseUrl}/auth/user`, account)
-      .toPromise();
-  }
-
-  async getProducts(): Promise<any> {
+  async getOutputProducts(): Promise<any> {
     const token = window.localStorage.getItem('token');
     return await this.http
       .get(`${environment.baseUrl}/api/saida/produtos`, {
