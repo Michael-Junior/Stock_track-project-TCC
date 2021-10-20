@@ -28,6 +28,15 @@ const routes: Routes = [
       },
       { path: 'saida-produtos', component: SaidaProdutosComponent },
       { path: 'saida-produtos/registrar', component: RegistrarSaidaComponent },
+      { path: 'product-registration', component: productsListaComponent },
+      {
+        path: 'product-registration/cadastrar',
+        component: productsCadastroComponent,
+      },
+      {
+        path: 'product-registration/:id/editar',
+        component: productsCadastroComponent,
+      },
     ],
     canActivate: [AuthGuard],
   },

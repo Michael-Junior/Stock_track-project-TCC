@@ -20,21 +20,21 @@ export class productsListaComponent implements OnInit {
     }
 
     getProducts() {
-        /*this.productsService.getProducts().subscribe(
+        this.productsService.getProducts().subscribe(
             products => {
                 this.products = products
             },
             error => this.msgError = <any>error
-        )*/
+        )
 
 
-        this.products = [
+        /*this.products = [
             {   id: '1', nome: 'product ffhdsfkdsfk  dfdsfdsjkhfkjds 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
             {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
             {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
             {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
             {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
             {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
-        ];
+        ];*/
     }
 }

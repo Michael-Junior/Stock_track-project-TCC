@@ -15,6 +15,8 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
 import { SaidaProdutosComponent } from './saida-produtos/saida-produtos.component';
 import { RegistrarSaidaComponent } from './saida-produtos/registrar-saida/registrar-saida.component';
 
+import { httpInterceptorProviders } from './http-interceptors';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { RegistrarSaidaComponent } from './saida-produtos/registrar-saida/regist
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    httpInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

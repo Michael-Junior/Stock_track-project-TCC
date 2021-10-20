@@ -11,7 +11,7 @@ import { Product } from '../../models/products-model';
 })
 export class ProductsService {
 
-  private urlApi = `${environment.baseUrl}/produto`;
+  private urlApi = `${environment.baseUrl}/api/produtos`;
   private jsonHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private http: HttpClient) { }
