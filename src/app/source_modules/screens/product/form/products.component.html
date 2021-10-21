@@ -71,7 +71,7 @@
                 <div class="offset-md-8 col-md-4">
                     <button type="submit" class="btn btn-outline-primary mx-1" type="submit"
                         [title]="productForm.valid ? 'Salvar' : 'Desabilitado até que os dados sejam validos'"
-                        [disabled]='!productForm.valid'>
+                        [disabled]='!productForm.valid' (click)="onSaveComplete()">
                         Salvar
                     </button>
                     <button class="btn btn-outline-secondary mx-1" type="button" title="Cancelar"
@@ -79,7 +79,7 @@
                         Cancelar
                     </button>
                     <button class="btn btn-outline-danger mx-1" *ngIf="pageTitle != 'Adicionar Produtos'" type="button"
-                        title="Excluir esse produto" (click)="deleteProduct()">
+                        title="Excluir esse produto" (click)="delete()">
                         Excluir
                     </button>
                 </div>

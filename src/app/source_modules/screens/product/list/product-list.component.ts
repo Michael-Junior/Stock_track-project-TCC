@@ -1,7 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 
+import { ProductServices } from "src/app/services/account/shared/products.service";
 import { Product } from "../../../models/products-model";
-import { ProductsService } from "../../../services/product/products.service";
+
 
 @Component({
 
@@ -13,28 +14,33 @@ export class productsListaComponent implements OnInit {
     products: Product[] = [];
     msgError: String = '';
 
-    constructor(private productsService: ProductsService) { }
+    //@Input()
+    //product: Product;
+
+    @Output()
+    onDeleteProduct = new EventEmitter
+
+
+    constructor(private productsService: ProductServices) { }
 
     ngOnInit() {
-        this.getProducts();
+        this.getAll();
     }
 
-    getProducts() {
-        this.productsService.getProducts().subscribe(
+    getAll() {
+        this.productsService.getAll().subscribe(
             products => {
                 this.products = products
             },
             error => this.msgError = <any>error
         )
+    }
 
 
-        /*this.products = [
-            {   id: '1', nome: 'product ffhdsfkdsfk  dfdsfdsjkhfkjds 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
-            {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
-            {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
-            {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
-            {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
-            {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
-        ];*/
+    remove(product: Product){
+        this.productsService.delete(product.id).subscribe(() => {
+            this.onDeleteProduct.emit(product);
+            
+        })
     }
 }

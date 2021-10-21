@@ -3,13 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { productsCadastroComponent } from './source_modules/screens/product/form/products.component';
 import { productsListaComponent } from './source_modules/screens/product/list/product-list.component';
 import { BackgroundComponent } from './source_modules/screens/background_main/background.component';
-import { HomeComponent } from './layout/home/home.component';
-import { AuthenticationComponent } from './layout/authentication/authentication.component';
-import { LoginComponent } from './account/login/login.component';
-import { CreateAccountComponent } from './account/create-account/create-account.component';
-import { AuthGuard } from './account/shared/auth.guard';
-import { SaidaProdutosComponent } from './saida-produtos/saida-produtos.component';
-import { RegistrarSaidaComponent } from './saida-produtos/registrar-saida/registrar-saida.component';
+import { HomeComponent } from './services/layout/home/home.component';
+import { AuthenticationComponent } from './services/layout/authentication/authentication.component';
+import { LoginComponent } from './services/account/login/login.component';
+import { CreateAccountComponent } from './services/account/create-account/create-account.component';
+import { AuthGuard } from './services/account/shared/auth.guard';
+import { SaidaProdutosComponent } from './source_modules/screens/saida-produtos/saida-produtos.component';
+import { RegistrarSaidaComponent } from './source_modules/screens/saida-produtos/registrar-saida/registrar-saida.component';
 
 const routes: Routes = [
   {

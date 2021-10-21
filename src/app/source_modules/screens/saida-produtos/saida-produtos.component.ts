@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { AccountService } from '../account/shared/account.service';
-import { ProductService } from '../account/shared/products.service';
+import { ProductServices } from 'src/app/services/account/shared/products.service';
+
+
+
+
+
 
 @Component({
   selector: 'app-saida-produtos',
@@ -9,21 +13,21 @@ import { ProductService } from '../account/shared/products.service';
   styleUrls: ['./saida-produtos.component.css'],
 })
 export class SaidaProdutosComponent implements OnInit {
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductServices) {}
   products = [
     {
       id: '',
       nome: '',
-      lote: '',
-      quantidade: '',
-      precoVenda: '',
+      descricao: '',
+      ativo: false,
+      precoCusto: '',
     },
   ];
 
   ngOnInit(): void {
-    console.log('CHAMOU FUNCAO');
-    this.productService
+    /*console.log('CHAMOU FUNCAO');
+    this.productsService
       .getOutputProducts()
-      .then((responseData) => (this.products = responseData));
+      .then((responseData) => (this.products = responseData));*/
   }
 }

@@ -2,9 +2,7 @@ export interface Product {
     id: string,
     nome: string,
     descricao: string,
-    unidadeMedida: string,
+    precoCusto: number,
+    margemLucro: number
     ativo: boolean,
-    custo: number,
-    margemLucro: number,
-    quantidade: number,
 }

@@ -21,12 +21,9 @@
                 <tr>
                     <th>Código</th>
                     <th>Nome Produto</th>
-                    <th>Descrição Produto</th>
-                    <th>Unidade Medida</th>
-                    <th>Ativo</th>
-                    <th>Custo</th>
+                    <th>Descrição Produto</th>            
+                    <th>Preco Custo</th>
                     <th>Margem Lucro</th>
-                    <th>Qtd Estoque</th>
                     <th>Opções</th>
                 </tr>
             </thead>
@@ -42,24 +39,15 @@
                         {{product.descricao}}
                     </td>
                     <td>
-                        {{product.unidadeMedida}}
-                    </td>
-                    <td>
-                        {{product.ativo}}
-                    </td>
-                    <td>
-                        {{product.custo}}
+                        {{product.precoCusto}}
                     </td>
                     <td>
                         {{product.margemLucro}}
                     </td>
                     <td>
-                        {{product.quantidade}}
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-outline-primary btn-sm">
+                        <button type="button" [routerLink]="['/editar', product.id]" class="btn btn-outline-primary btn-sm">
                             <span class="glyphicon glyphicon-edit"></span></button>
-                        <button type="button" class="btn btn-outline-danger btn-sm">
+                        <button type="button" class="btn btn-outline-danger btn-sm" (click)="remove(product)">
                             <span class="glyphicon glyphicon-trash"></span></button>
                     </td>
                 </tr>
