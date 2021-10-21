@@ -18,4 +18,15 @@ export class ProductService {
       })
       .toPromise();
   }
+
+  async postOutputProduct(outputProduct: Record<string, string>): Promise<any> {
+    const token = window.localStorage.getItem('token');
+    return await this.http
+      .post(`${environment.baseUrl}/api/saida/produto`, outputProduct, {
+        headers: {
+          Authorization: 'Bearer ' + token,
+        },
+      })
+      .toPromise();
+  }
 }
