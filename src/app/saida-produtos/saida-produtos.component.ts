@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { AccountService } from '../account/shared/account.service';
 import { ProductService } from '../account/shared/products.service';
 
 @Component({
@@ -21,7 +19,6 @@ export class SaidaProdutosComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    console.log('CHAMOU FUNCAO');
     this.productService
       .getOutputProducts()
       .then((responseData) => (this.products = responseData));
