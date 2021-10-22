@@ -1,34 +1,31 @@
-import { Component, OnInit } from "@angular/core";
-
-import { Product } from "../../../models/products-model";
-import { ProductsService } from "../../../services/product/products.service";
+import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../../common/services/product/products.service';
+import { Product } from '../models/products-model';
 
 @Component({
-
-    selector: 'app.product_list',
-    templateUrl: './product-list.component.html',
-    styleUrls: ['./product-list.component.css']
+  selector: 'app.product_list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css'],
 })
 export class productsListaComponent implements OnInit {
-    products: Product[] = [];
-    msgError: String = '';
+  products: Product[] = [];
+  msgError: String = '';
 
-    constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService) {}
 
-    ngOnInit() {
-        this.getProducts();
-    }
+  ngOnInit() {
+    this.getProducts();
+  }
 
-    getProducts() {
-        this.productsService.getProducts().subscribe(
-            products => {
-                this.products = products
-            },
-            error => this.msgError = <any>error
-        )
+  getProducts() {
+    this.productsService.getProducts().subscribe(
+      (products) => {
+        this.products = products;
+      },
+      (error) => (this.msgError = <any>error)
+    );
 
-
-        /*this.products = [
+    /*this.products = [
             {   id: '1', nome: 'product ffhdsfkdsfk  dfdsfdsjkhfkjds 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
             {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
             {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
@@ -36,5 +33,5 @@ export class productsListaComponent implements OnInit {
             {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
             {   id: '1', nome: 'product 2', descricao: 'teste', unidadeMedida: 'UN', ativo: true, custo: 10.0, margemLucro: 10.0, quantidade: 1    },
         ];*/
-    }
+  }
 }

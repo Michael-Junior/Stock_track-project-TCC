@@ -20,10 +20,12 @@ export class AccountService {
   }
 
   async createAccount(account: any) {
-    const result = await this.http.post(`${environment.baseUrl}/auth/user`, account).toPromise();
+    const result = await this.http
+      .post(`${environment.baseUrl}/auth/user`, account)
+      .toPromise();
   }
 
-  getAuthorizationToken(){
+  getAuthorizationToken() {
     const token = window.localStorage.getItem('token');
     return token;
   }

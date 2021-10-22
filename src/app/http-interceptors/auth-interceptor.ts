@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
-import { AccountService } from './../account/shared/account.service';
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpInterceptor,
+  HttpRequest,
+  HttpHandler,
+  HttpErrorResponse,
+} from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { AccountService } from '../common/services/account/account.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-
-  constructor(
-    private accountService: AccountService
-  ) { }
+  constructor(private accountService: AccountService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-
     const token = this.accountService.getAuthorizationToken();
     let request: HttpRequest<any> = req;
 
@@ -22,15 +23,12 @@ export class AuthInterceptor implements HttpInterceptor {
       // Faço o clone para conseguir mudar as propriedades
       // Passo o token de autenticação no header
       request = req.clone({
-        headers: req.headers.set('Authorization', `Bearer ${token}`)
+        headers: req.headers.set('Authorization', `Bearer ${token}`),
       });
     }
 
     // retorno o request com o erro tratado
-    return next.handle(request)
-      .pipe(
-        catchError(this.handleError)
-      );
+    return next.handle(request).pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {
@@ -41,7 +39,8 @@ export class AuthInterceptor implements HttpInterceptor {
       // Erro retornando pelo backend
       console.error(
         `Código do erro ${error.status}, ` +
-        `Erro: ${JSON.stringify(error.error)}`);
+          `Erro: ${JSON.stringify(error.error)}`
+      );
     }
     // retornar um observable com uma mensagem amigavel.
     return throwError('Ocorreu um erro, tente novamente');

@@ -6,8 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { productsListaComponent } from './source_modules/screens/product/list/product-list.component';
-import { productsCadastroComponent } from './source_modules/screens/product/form/products.component';
+import { productsListaComponent } from './product/list/product-list.component';
+import { productsCadastroComponent } from './product/form/products.component';
 import { LoginComponent } from './account/login/login.component';
 import { CreateAccountComponent } from './account/create-account/create-account.component';
 import { HomeComponent } from './layout/home/home.component';
@@ -17,11 +17,10 @@ import { RegistrarSaidaComponent } from './saida-produtos/registrar-saida/regist
 
 import { httpInterceptorProviders } from './http-interceptors';
 
-
 @NgModule({
   declarations: [
     AppComponent,
-    
+
     NavbarComponent,
     productsListaComponent,
     productsCadastroComponent,
@@ -39,9 +38,7 @@ import { httpInterceptorProviders } from './http-interceptors';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [
-    httpInterceptorProviders
-  ],
-  bootstrap: [AppComponent]
+  providers: [httpInterceptorProviders],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../account/shared/products.service';
+import { ProductsService } from '../common/services/product/products.service';
 
 @Component({
   selector: 'app-saida-produtos',
@@ -7,7 +7,7 @@ import { ProductService } from '../account/shared/products.service';
   styleUrls: ['./saida-produtos.component.css'],
 })
 export class SaidaProdutosComponent implements OnInit {
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductsService) {}
   products = [
     {
       id: '',
