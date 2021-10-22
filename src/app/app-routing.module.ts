@@ -1,13 +1,13 @@
 import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { productsCadastroComponent } from './source_modules/screens/product/form/products.component';
-import { productsListaComponent } from './source_modules/screens/product/list/product-list.component';
-import { BackgroundComponent } from './source_modules/screens/background_main/background.component';
+import { productsCadastroComponent } from './product/form/products.component';
+import { productsListaComponent } from './product/list/product-list.component';
+import { BackgroundComponent } from './common/screens/background_main/background.component';
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { LoginComponent } from './account/login/login.component';
 import { CreateAccountComponent } from './account/create-account/create-account.component';
-import { AuthGuard } from './account/shared/auth.guard';
+import { AuthGuard } from './account/guard/auth.guard';
 import { SaidaProdutosComponent } from './saida-produtos/saida-produtos.component';
 import { RegistrarSaidaComponent } from './saida-produtos/registrar-saida/registrar-saida.component';
 

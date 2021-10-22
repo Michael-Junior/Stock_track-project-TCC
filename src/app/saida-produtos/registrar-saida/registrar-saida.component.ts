@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from 'src/app/account/shared/products.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { OutputProduct } from 'src/app/source_modules/models/outputProduct.model';
+import { ProductsService } from 'src/app/common/services/product/products.service';
 
 @Component({
   selector: 'app-registrar-saida',
@@ -18,7 +16,10 @@ export class RegistrarSaidaComponent implements OnInit {
     precoVenda: new FormControl(),
   });
 
-  constructor(private productService: ProductService, private router: Router) {}
+  constructor(
+    private productService: ProductsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
