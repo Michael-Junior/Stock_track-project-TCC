@@ -14,16 +14,10 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
   errorMessage: string = '';
   pageTitle: string = 'Adicionar Produtos';
   formMode: string = '';
-  productForm: any;
-  product: Product = {
-    id: '',
-    nome: '',
-    descricao: '',
-    ativo: false,
-    precoCusto: 0,
-    margemLucro: 0,
-  };
-  validationMessages: { [Key: string]: { [key: string]: string } };
+  productForm!: FormGroup;
+  product!: Product;
+
+  validationMessages: { [Key: string]: { [key: string]: string }};
   private subscription: Subscription = new Subscription();
 
   constructor(
@@ -38,9 +32,12 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
         minlength: 'A descrição do produto deve ter no minimo 3 caracteres',
         maxlength: 'A descrição do produto não deve exceder 100 caracteres',
       },
-      detalhes: {
+      descricao: {
         minlength: 'A descrição do produto deve ter no minimo 3 caracteres',
         maxlength: 'A descrição do produto não deve exceder 100 caracteres',
+      },
+      precoCusto: {
+        required: 'O valor é obrigatório',
       },
     };
   }
@@ -56,7 +53,8 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
           Validators.maxLength(50),
         ],
       ],
-      detalhes: ['', [Validators.min(3), Validators.maxLength(500)]],
+      descricao: ['', [Validators.min(3), Validators.maxLength(500)]],
+      precoCusto: ['', [Validators.required]],
     });
 
     this.subscription = this.route.paramMap.subscribe((params) => {
@@ -68,9 +66,9 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
           id: '',
           nome: '',
           descricao: '',
-          ativo: false,
+          ativo: true,
           precoCusto: 0,
-          margemLucro: 0,
+          margemLucro: 1,
         };
         this.showProduct(product);
       } else {
@@ -98,7 +96,7 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
     if (this.product.id == '') {
       this.pageTitle = 'Adicionar Produtos';
     } else {
-      this.pageTitle = `Editar Produto: ${this.product.nome}`;
+      this.pageTitle = `Alteração do Produto: ${this.product.nome}`;
     }
 
     this.productForm.patchValue({
@@ -107,11 +105,10 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
       descricao: this.product.descricao,
       ativo: this.product.ativo,
       precoCusto: this.product.precoCusto,
-      margemLucro: this.product.margemLucro,
     });
   }
 
-  deleteProduct(): void {
+  /*deleteProduct(): void {
     if (this.product.id == '') {
       this.onSaveComplete();
     } else {
@@ -126,7 +123,7 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
         );
       }
     }
-  }
+  }*/
 
   toSave(): void {
     if (this.productForm.valid) {
@@ -159,6 +156,6 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
 
   onSaveComplete(): void {
     this.productForm.reset();
-    this.router.navigate(['/product']);
+    this.router.navigate(['/product-registration']);
   }
 }
