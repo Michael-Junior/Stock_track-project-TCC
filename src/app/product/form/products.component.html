@@ -9,7 +9,7 @@
             <div class='row'>
                 <div class="col">
                     <label class="col form-control-sm mb-9" for="nome">
-                        Nome Produto
+                        Descrição Produto
                     </label>
                     <div class="col">
                         <input class="form-control mb-2 form-control-sm" type="text" id="nome" name="nome"
@@ -58,36 +58,26 @@
             <div class='row col-md-4'>
                 <div class="col form-control-sm mx-1">
                     <label class="col form-control-sm mb-9" for="precoVenda">
-                        Preço de Venda
+                        Preço de Custo
                     </label>
                     <div class="col">
-                        <input class="form-control mb-2 form-control-sm" type="text" id="precoVenda" name="precoVenda"
-                            placeholder="R$ 0,00" formControlName="precoVenda">
+                        <input class="form-control mb-2" type="text" id="precoCusto" name="precoCusto"
+                            placeholder="R$ 0,00" formControlName="precoCusto">
                     </div>
                 </div>
             </div>
 
             <div class="form-group row mb-2">
                 <div class="offset-md-8 col-md-4">
-                    <button type="submit" class="btn btn-outline-primary mx-1" type="submit"
-                        [title]="productForm.valid ? 'Salvar' : 'Desabilitado até que os dados sejam validos'"
-                        [disabled]='!productForm.valid'>
+                    <button class="btn btn-outline-primary mx-1" type="submit">
                         Salvar
                     </button>
                     <button class="btn btn-outline-secondary mx-1" type="button" title="Cancelar"
                         [routerLink]="['/product-registration']">
                         Cancelar
                     </button>
-                    <button class="btn btn-outline-danger mx-1" *ngIf="pageTitle != 'Adicionar Produtos'" type="button"
-                        title="Excluir esse produto" (click)="deleteProduct()">
-                        Excluir
-                    </button>
                 </div>
             </div>
         </form>
     </div>
-</div>
-
-<div class="alert alert-danger" *ngif="errorMessage">
-    {{errorMessage}}
 </div>

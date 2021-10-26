@@ -9,7 +9,7 @@ import { Product } from 'src/app/product/models/products-model';
   providedIn: 'root',
 })
 export class ProductsService {
-  private urlApi = `${environment.baseUrl}/api/produtos`;
+  private urlApi = `${environment.baseUrl}/api/produto`;
   private jsonHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private http: HttpClient) {}
@@ -17,7 +17,7 @@ export class ProductsService {
   getProducts(): Observable<Product[]> {
     const token = window.localStorage.getItem('token');
     return this.http
-      .get<Product[]>(this.urlApi, {
+      .get<Product[]>(this.urlApi + `${'s'}`,{
         headers: {
           Authorization: `Bearer ` + token,
         },
@@ -36,22 +36,41 @@ export class ProductsService {
   }
 
   createProduct(Product: Product) {
+    const token = window.localStorage.getItem('token');
     return this.http
-      .post<Product>(this.urlApi, Product, { headers: this.jsonHeaders })
+      .post<Product>(this.urlApi + `${'s'}`,
+      Product, {
+        headers: {
+          Authorization: `Bearer ` + token,
+        },
+      },)
       .pipe(catchError(this.treatError));
   }
 
   updateProduct(Product: Product) {
+    const token = window.localStorage.getItem('token');
+
     const urlId = `${this.urlApi}/${Product.id}`;
     return this.http
-      .put<Product>(urlId, Product, { headers: this.jsonHeaders })
+      .put<Product>(urlId, Product, 
+        {
+          headers: {
+            Authorization: `Bearer ` + token,
+          },
+        })
       .pipe(catchError(this.treatError));
   }
 
   deleteProduct(id: string) {
+    const token = window.localStorage.getItem('token');
+
     const urlId = `${this.urlApi}/${id}`;
     return this.http
-      .delete<Product>(urlId, { headers: this.jsonHeaders })
+      .delete<Product>(urlId, {
+        headers: {
+          Authorization: `Bearer ` + token,
+        },
+      })
       .pipe(catchError(this.treatError));
   }
 
