@@ -17,7 +17,7 @@ export class ProductsService {
   getProducts(): Observable<Product[]> {
     const token = window.localStorage.getItem('token');
     return this.http
-      .get<Product[]>(this.urlApi + `${'s'}`,{
+      .get<Product[]>(this.urlApi + `${'s'}`, {
         headers: {
           Authorization: `Bearer ` + token,
         },
@@ -38,12 +38,11 @@ export class ProductsService {
   createProduct(Product: Product) {
     const token = window.localStorage.getItem('token');
     return this.http
-      .post<Product>(this.urlApi + `${'s'}`,
-      Product, {
+      .post<Product>(this.urlApi + `${'s'}`, Product, {
         headers: {
           Authorization: `Bearer ` + token,
         },
-      },)
+      })
       .pipe(catchError(this.treatError));
   }
 
@@ -52,12 +51,11 @@ export class ProductsService {
 
     const urlId = `${this.urlApi}/${Product.id}`;
     return this.http
-      .put<Product>(urlId, Product, 
-        {
-          headers: {
-            Authorization: `Bearer ` + token,
-          },
-        })
+      .put<Product>(urlId, Product, {
+        headers: {
+          Authorization: `Bearer ` + token,
+        },
+      })
       .pipe(catchError(this.treatError));
   }
 
@@ -115,6 +113,7 @@ export class ProductsService {
       ativo: true,
       precoCusto: 0.0,
       margemLucro: 0.0,
+      status: '',
     };
   }
 }

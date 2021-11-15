@@ -5,4 +5,5 @@ export interface Product {
   ativo: boolean;
   precoCusto: number;
   margemLucro: number;
+  status: string;
 }
