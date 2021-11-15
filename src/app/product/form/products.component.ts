@@ -17,7 +17,7 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
   productForm!: FormGroup;
   product!: Product;
 
-  validationMessages: { [Key: string]: { [key: string]: string }};
+  validationMessages: { [Key: string]: { [key: string]: string } };
   private subscription: Subscription = new Subscription();
 
   constructor(
@@ -55,6 +55,7 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
       ],
       descricao: ['', [Validators.min(3), Validators.maxLength(500)]],
       precoCusto: ['', [Validators.required]],
+      status: [''],
     });
 
     this.subscription = this.route.paramMap.subscribe((params) => {
@@ -69,6 +70,7 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
           ativo: true,
           precoCusto: 0,
           margemLucro: 1,
+          status: '',
         };
         this.showProduct(product);
       } else {

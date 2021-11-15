@@ -8,7 +8,9 @@
         <button
           type="button"
           class="btn btn-primary"
-          [routerLink]="['/product-registration/cadastrar']">Novo Produto
+          [routerLink]="['/product-registration/cadastrar']"
+        >
+          Novo Produto
         </button>
       </div>
     </div>
@@ -18,11 +20,11 @@
     <table class="table mb-0">
       <thead>
         <tr>
-          <th>Código</th>
-          <th>Descrição Produto</th>
+          <th>ID</th>
+          <th>Nome</th>
           <th>Descrição Detalhada</th>
-          <th>Custo</th>
-          <th>Margem Lucro</th>
+          <th>Margem Lucro (%)</th>
+          <th>Status</th>
           <th>Opções</th>
         </tr>
       </thead>
@@ -38,13 +40,16 @@
             {{ product.descricao }}
           </td>
           <td>
-            {{ product.precoCusto }}
-          </td>
-          <td>
             {{ product.margemLucro }}
           </td>
           <td>
-            <button class="btn btn-primary btn-sm" [routerLink]="['/product-registration', product.id, 'editar']">
+            {{ product.status }}
+          </td>
+          <td>
+            <button
+              class="btn btn-primary btn-sm"
+              [routerLink]="['/product-registration', product.id, 'editar']"
+            >
               <i class="fa fa-edit"></i>
             </button>
           </td>
