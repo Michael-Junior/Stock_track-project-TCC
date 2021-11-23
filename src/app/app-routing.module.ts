@@ -10,6 +10,8 @@ import { CreateAccountComponent } from './account/create-account/create-account.
 import { AuthGuard } from './account/guard/auth.guard';
 import { SaidaProdutosComponent } from './saida-produtos/saida-produtos.component';
 import { RegistrarSaidaComponent } from './saida-produtos/registrar-saida/registrar-saida.component';
+import { VendorListComponent } from './vendor/list/vendor-list.component';
+import { VendorFormComponent } from './vendor/form/vendor-form.component';
 
 const routes: Routes = [
   {
@@ -21,8 +23,20 @@ const routes: Routes = [
       { path: 'saida-produtos', component: SaidaProdutosComponent },
       { path: 'saida-produtos/registrar', component: RegistrarSaidaComponent },
       { path: 'product-registration', component: productsListaComponent },
-      { path: 'product-registration/cadastrar', component: productsCadastroComponent },
-      { path: 'product-registration/:id/editar', component: productsCadastroComponent },
+      {
+        path: 'product-registration/cadastrar',
+        component: productsCadastroComponent,
+      },
+      {
+        path: 'product-registration/:id/editar',
+        component: productsCadastroComponent,
+      },
+      { path: 'vendors', component: VendorListComponent },
+      { path: 'vendors/registration', component: VendorFormComponent },
+      {
+        path: 'vendors/registration/:id/patch',
+        component: VendorFormComponent,
+      },
     ],
     canActivate: [AuthGuard],
   },

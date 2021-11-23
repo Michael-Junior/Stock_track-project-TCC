@@ -15,10 +15,9 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
 import { SaidaProdutosComponent } from './saida-produtos/saida-produtos.component';
 import { RegistrarSaidaComponent } from './saida-produtos/registrar-saida/registrar-saida.component';
 import { HttpErrorInterceptor } from './http-interceptors/http-error-interceptor';
-
 import { httpInterceptorProviders } from './http-interceptors';
-import { ListComponent } from './vendor/list/list.component';
-import { FormComponent } from './vendor/form/form.component';
+import { VendorListComponent } from './vendor/list/vendor-list.component';
+import { VendorFormComponent } from './vendor/form/vendor-form.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +32,8 @@ import { FormComponent } from './vendor/form/form.component';
     AuthenticationComponent,
     SaidaProdutosComponent,
     RegistrarSaidaComponent,
-    ListComponent,
-    FormComponent,
+    VendorListComponent,
+    VendorFormComponent,
   ],
   imports: [
     BrowserModule,
