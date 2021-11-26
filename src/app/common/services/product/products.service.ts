@@ -36,6 +36,7 @@ export class ProductsService {
   }
 
   createProduct(Product: Product) {
+    console.log(Product);
     const token = window.localStorage.getItem('token');
     return this.http
       .post<Product>(this.urlApi + `${'s'}`, Product, {
