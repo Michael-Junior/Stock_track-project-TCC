@@ -18,6 +18,8 @@ import { HttpErrorInterceptor } from './http-interceptors/http-error-interceptor
 import { httpInterceptorProviders } from './http-interceptors';
 import { VendorListComponent } from './vendor/list/vendor-list.component';
 import { VendorFormComponent } from './vendor/form/vendor-form.component';
+import { CustomerListComponent } from './customers/customer-list/customer-list.component';
+import { CustomerFormComponent } from './customers/customer-form/customer-form.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { VendorFormComponent } from './vendor/form/vendor-form.component';
     RegistrarSaidaComponent,
     VendorListComponent,
     VendorFormComponent,
+    CustomerListComponent,
+    CustomerFormComponent,
   ],
   imports: [
     BrowserModule,

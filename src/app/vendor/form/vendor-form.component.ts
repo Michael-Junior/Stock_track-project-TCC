@@ -34,11 +34,10 @@ export class VendorFormComponent implements OnInit {
     const id = this.routeUrl.snapshot.params.id;
     if (!id) {
       await this.vendorService.createVendor(this.vendorForm.value);
-      this.redirectToVendors();
     } else {
       const vendor = { ...this.vendorForm.value, id: id };
       await this.vendorService.updateVendor(vendor);
-      this.redirectToVendors();
     }
+    this.redirectToVendors();
   }
 }
