@@ -20,6 +20,7 @@ import { VendorListComponent } from './vendor/list/vendor-list.component';
 import { VendorFormComponent } from './vendor/form/vendor-form.component';
 import { CustomerListComponent } from './customers/customer-list/customer-list.component';
 import { CustomerFormComponent } from './customers/customer-form/customer-form.component';
+import { StockComponent } from './stock/stock.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CustomerFormComponent } from './customers/customer-form/customer-form.c
     VendorFormComponent,
     CustomerListComponent,
     CustomerFormComponent,
+    StockComponent,
   ],
   imports: [
     BrowserModule,

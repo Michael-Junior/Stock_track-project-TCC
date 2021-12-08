@@ -14,6 +14,7 @@ import { VendorListComponent } from './vendor/list/vendor-list.component';
 import { VendorFormComponent } from './vendor/form/vendor-form.component';
 import { CustomerListComponent } from './customers/customer-list/customer-list.component';
 import { CustomerFormComponent } from './customers/customer-form/customer-form.component';
+import { StockComponent } from './stock/stock.component';
 
 const routes: Routes = [
   {
@@ -21,12 +22,12 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       { path: '', component: BackgroundComponent },
-      { path: 'cadastro-de-produtos', component: productsListaComponent },
       { path: 'saida-produtos', component: SaidaProdutosComponent },
       { path: 'saida-produtos/registrar', component: RegistrarSaidaComponent },
       { path: 'product-registration', component: productsListaComponent },
+      { path: 'stock', component: StockComponent },
       {
-        path: 'product-registration/cadastrar',
+        path: 'product-registration/register-product',        
         component: productsCadastroComponent,
       },
       {
