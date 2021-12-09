@@ -67,6 +67,7 @@ export class productsCadastroComponent implements OnInit, OnDestroy {
           id: '',
           nome: '',
           descricao: '',
+          quantidade: 0,
           ativo: true,
           precoCusto: 0,
           margemLucro: 1,
