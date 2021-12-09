@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../common/services/product/products.service';
+import { Product } from '../product/models/products-model';
 
 @Component({
   selector: 'app-stock',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stock.component.css']
 })
 export class StockComponent implements OnInit {
+  products: Product[] = [];
+  msgError: String = '';
 
-  constructor() { }
+  constructor(private productsService: ProductsService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getProducts();
+  }
+
+  getProducts() {
+    this.productsService.getProducts().subscribe(
+      (products) => {
+        this.products = products;
+      },
+      (error) => (this.msgError = <any>error)
+    );
   }
 
 }

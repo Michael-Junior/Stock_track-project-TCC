@@ -6,18 +6,32 @@
         </div>
       </div>
     </div>
-  
     <div class="table-responsive">
       <table class="table mb-0">
         <thead>
           <tr>
             <th>ID</th>
-            <th>Nome</th>
-            <th>UN</th>
-            <th>Quantidade</th>
+            <th>Nome do produto</th>
+            <th>Descrição detalhada</th>
+            <th>Saldo em estoque</th>
+            <th>Validade mais proxima</th>
           </tr>
         </thead>
         <tbody>
+          <tr *ngFor="let product of products">
+            <td>
+              {{ product.id }}
+            </td>
+            <td>
+              {{ product.nome }}
+            </td>
+            <td>
+              {{ product.descricao }}
+            </td>
+            <td>
+              {{ product.quantidade }}
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

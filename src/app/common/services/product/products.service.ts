@@ -111,6 +111,7 @@ export class ProductsService {
       id: '',
       nome: '',
       descricao: '',
+      quantidade: 0.0,
       ativo: true,
       precoCusto: 0.0,
       margemLucro: 0.0,
