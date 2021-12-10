@@ -19,6 +19,7 @@ export class CustomerFormComponent implements OnInit {
     nome: new FormControl(),
     cnpj: new FormControl(),
     endereco: new FormControl(),
+    telefone: new FormControl(),
   });
 
   redirectToCustomers() {
@@ -33,7 +34,7 @@ export class CustomerFormComponent implements OnInit {
       await this.customerService.createCustomer(this.customerForm.value);
     } else {
       const customer = { ...this.customerForm.value, id: id };
-      await this.customerService.updateCustomoer(customer);
+      await this.customerService.updateCustomer(customer);
     }
     this.redirectToCustomers();
   }

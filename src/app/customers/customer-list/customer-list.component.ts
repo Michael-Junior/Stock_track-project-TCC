@@ -8,24 +8,21 @@ import { CustomerService } from 'src/app/common/services/customer/customer.servi
   styleUrls: ['./customer-list.component.css'],
 })
 export class CustomerListComponent implements OnInit {
-  constructor(customerService: CustomerService) {}
+  constructor(private customerService: CustomerService) {}
 
-  customers: Customer[] = [
+  customers = [
     {
-      id: '12345',
-      nome: 'Gustavo Cliente S/A',
-      cnpj: '12345',
-      endereco: 'Rua Palestra Itália, 200',
-    },
-    {
-      id: '12345',
-      nome: 'Gabriel Cliente S/A',
-      cnpj: '12345',
-      endereco: 'Rua Palestra Itália, 200',
+      id: '',
+      nome: '',
+      cnpj: '',
+      endereco: '',
     },
   ];
 
   ngOnInit(): void {
-    this.customers = this.customers;
+    // this.customers = this.customers;
+    this.customerService
+      .getCustomers()
+      .then((responseData) => (this.customers = responseData));
   }
 }
