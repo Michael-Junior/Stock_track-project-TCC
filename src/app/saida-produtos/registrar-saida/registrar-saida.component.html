@@ -27,27 +27,23 @@
             </div>
           </div>
           <div class="col">
-            <div class="form-group">
-              <label class="col form-control-sm mb-9" for="descricao">
-                Lote
-              </label>
+            <div>
+              <label class="col form-control-sm mb-9" for="lote"> Lote </label>
               <div class="col">
                 <input
                   class="form-control mb-2 form-control-sm"
                   type="text"
                   id="lote"
-                  name="lote"
-                  placeholder="Informe o número do lote do Produto"
+                  nome="lote"
+                  placeholder="Informe o lote do produto"
                   formControlName="lote"
                 />
               </div>
             </div>
           </div>
-        </div>
-        <div class="row mb-9">
           <div class="col">
             <div class="form-group">
-              <label class="col form-control-sm mb-9" for="descricao">
+              <label class="col form-control-sm mb-9" for="quantidade">
                 Quantidade
               </label>
               <div class="col">
@@ -56,54 +52,84 @@
                   type="text"
                   id="quantidade"
                   name="quantidade"
-                  placeholder="Informe a quantidade movimentada do produto"
+                  placeholder="Informe a quantidade vendida"
                   formControlName="quantidade"
                 />
               </div>
             </div>
           </div>
-          <div class="col form-control-sm mx-2">
-            <div class="form-group">
-              <label for="ativo">Unidade : </label>
-              <div>
-                <select
-                  class="selectpicker"
-                  data-size="4"
-                  data-live-search="true"
-                  data-width="100%"
-                  name="unidadeVolume"
-                  required
-                >
-                  <option selected default>UN</option>
-                  <option>CX</option>
-                  <option>PLT</option>
-                  <option>KG</option>
-                  <option>PC</option>
-                  <option>LT</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row col-md-4">
-          <div class="col form-control-sm mx-1">
-            <div class="form-group">
-              <label class="col form-control-sm mb-9" for="precoVenda">
-                Preço de Venda
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="nomeCliente">
+                Nome do Cliente
               </label>
               <div class="col">
                 <input
                   class="form-control mb-2 form-control-sm"
                   type="text"
-                  id="precoVenda"
-                  name="precoVenda"
-                  placeholder="R$ 0,00"
-                  formControlName="precoVenda"
+                  id="nomeCliente"
+                  nome="nomeCliente"
+                  placeholder="Informe o nome do cliente"
+                  formControlName="nomeCliente"
                 />
               </div>
             </div>
           </div>
         </div>
+        <div class="row mb-9">
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="cnpjCliente">
+                Cnpj do Cliente
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="cnpjCliente"
+                  nome="cnpjCliente"
+                  placeholder="Informe o CNPJ do cliente"
+                  formControlName="cnpjCliente"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="col form-control-sm mb-9" for="endereçoCliente">
+                Endereço do Cliente
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="endereçoCliente"
+                  name="endereçoCliente"
+                  placeholder="Informe o endereço do cliente"
+                  formControlName="endereçoCliente"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col form-control-sm mx-1">
+            <div class="form-group">
+              <label class="col form-control-sm mb-9" for="telefoneCliente">
+                Telefone do Cliente
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="telefoneCliente"
+                  name="telefoneCliente"
+                  placeholder="informe o telefone do cliente"
+                  formControlName="telefoneCliente"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row col-md-4"></div>
         <div class="form-group row mb-2">
           <div class="offset-md-8 col-md-4">
             <button

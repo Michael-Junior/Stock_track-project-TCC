@@ -87,6 +87,7 @@ export class ProductsService {
 
   async postOutputProduct(outputProduct: Record<string, string>): Promise<any> {
     const token = window.localStorage.getItem('token');
+    console.log(outputProduct);
     return await this.http
       .post(`${environment.baseUrl}/api/saida/produto`, outputProduct, {
         headers: {
