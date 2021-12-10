@@ -35,29 +35,30 @@ export class ProductsService {
     return this.http.get<Product>(urlId).pipe(catchError(this.treatError));
   }
 
-  createProduct(Product: Product) {
-    console.log(Product);
+  createProduct(product: Product) {
     const token = window.localStorage.getItem('token');
     return this.http
-      .post<Product>(this.urlApi + `${'s'}`, Product, {
+      .post(`${environment.baseUrl}/api/produtos`, product, {
         headers: {
           Authorization: `Bearer ` + token,
         },
       })
-      .pipe(catchError(this.treatError));
+      .toPromise();
   }
 
-  updateProduct(Product: Product) {
+  updateProduct(product: Product) {
     const token = window.localStorage.getItem('token');
-
-    const urlId = `${this.urlApi}/${Product.id}`;
     return this.http
-      .put<Product>(urlId, Product, {
-        headers: {
-          Authorization: `Bearer ` + token,
-        },
-      })
-      .pipe(catchError(this.treatError));
+      .put<Product>(
+        `${environment.baseUrl}/api/produto/${product.id}`,
+        product,
+        {
+          headers: {
+            Authorization: `Bearer ` + token,
+          },
+        }
+      )
+      .toPromise();
   }
 
   deleteProduct(id: string) {
