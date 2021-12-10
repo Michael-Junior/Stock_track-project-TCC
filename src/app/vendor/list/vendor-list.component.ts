@@ -11,21 +11,18 @@ export class VendorListComponent implements OnInit {
   // vendors: Vendor[];
   vendors: Vendor[] = [
     {
-      id: '12345',
-      nome: 'Gustavo S/A',
-      cnpj: '12345',
-      endereco: 'Rua Palestra Itália, 200',
-    },
-    {
-      id: '12345',
-      nome: 'Gabriel S/A',
-      cnpj: '12345',
-      endereco: 'Rua Palestra Itália, 200',
+      id: '',
+      nome: '',
+      cnpj: '',
+      endereco: '',
     },
   ];
-  constructor(vendorService: VendorService) {}
+  constructor(private vendorService: VendorService) {}
 
   ngOnInit(): void {
-    this.vendors = this.vendors;
+    // this.vendors = this.vendors;
+    this.vendorService
+      .getVendors()
+      .then((responseData) => (this.vendors = responseData));
   }
 }

@@ -12,7 +12,7 @@ export class VendorService {
   async getVendors(): Promise<any> {
     const token = window.localStorage.getItem('token');
     return await this.http
-      .get(`${environment.baseUrl}/api/saida/produtos`, {
+      .get(`${environment.baseUrl}/api/fornecedores`, {
         headers: {
           Authorization: 'Bearer ' + token,
         },
@@ -22,13 +22,23 @@ export class VendorService {
 
   async createVendor(vendor: Vendor): Promise<any> {
     const token = window.localStorage.getItem('token');
-    console.log(vendor);
-    console.log(token);
+    await this.http
+      .post(`${environment.baseUrl}/api/fornecedor`, vendor, {
+        headers: {
+          Authorization: 'Bearer ' + token,
+        },
+      })
+      .toPromise();
   }
 
   async updateVendor(vendor: Vendor): Promise<any> {
     const token = window.localStorage.getItem('token');
-    console.log('UPDATE VENDOR', vendor);
-    console.log('UPDATE TOKEN', token);
+    await this.http
+      .put(`${environment.baseUrl}/api/fornecedor/${vendor.id}`, vendor, {
+        headers: {
+          Authorization: 'Bearer ' + token,
+        },
+      })
+      .toPromise();
   }
 }

@@ -22,6 +22,7 @@ export class VendorFormComponent implements OnInit {
     nome: new FormControl(),
     cnpj: new FormControl(),
     endereco: new FormControl(),
+    telefone: new FormControl(),
   });
 
   ngOnInit(): void {}

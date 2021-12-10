@@ -7,22 +7,36 @@ import { Customer } from 'src/app/customers/models/customer-model';
   providedIn: 'root',
 })
 export class CustomerService {
-  constructor(httpService: HttpClient) {}
+  constructor(private httpService: HttpClient) {}
 
   async getCustomers(): Promise<any> {
     const token = window.localStorage.getItem('token');
-    console.log(environment);
+    return await this.httpService
+      .get(`${environment.baseUrl}/api/clientes`, {
+        headers: { Authorization: 'Bearer ' + token },
+      })
+      .toPromise();
   }
 
   async createCustomer(customer: Customer): Promise<any> {
     const token = window.localStorage.getItem('token');
-    console.log(customer);
-    console.log(token);
+    await this.httpService
+      .post(`${environment.baseUrl}/api/cliente`, customer, {
+        headers: {
+          Authorization: 'Bearer ' + token,
+        },
+      })
+      .toPromise();
   }
 
-  async updateCustomoer(customer: Customer): Promise<any> {
+  async updateCustomer(customer: Customer): Promise<any> {
     const token = window.localStorage.getItem('token');
-    console.log('UPDATE CUSTOMER', customer);
-    console.log('UPDATE TOKEN', token);
+    await this.httpService
+      .put(`${environment.baseUrl}/api/cliente/${customer.id}`, customer, {
+        headers: {
+          Authorization: 'Bearer ' + token,
+        },
+      })
+      .toPromise();
   }
 }
