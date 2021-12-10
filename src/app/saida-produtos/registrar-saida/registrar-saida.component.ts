@@ -13,7 +13,10 @@ export class RegistrarSaidaComponent implements OnInit {
     nome: new FormControl(),
     lote: new FormControl(),
     quantidade: new FormControl(),
-    precoVenda: new FormControl(),
+    nomeCliente: new FormControl(),
+    cnpjCliente: new FormControl(),
+    endereçoCliente: new FormControl(),
+    telefoneCliente: new FormControl(),
   });
 
   constructor(
