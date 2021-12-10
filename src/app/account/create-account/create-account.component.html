@@ -54,14 +54,18 @@
       id="cpf"
       [(ngModel)]="account.cpf"
       required
+      mask="000.000.000-00"
+      [dropSpecialCharacters]="false"
     />
   </div>
-  <p><div class="d-grid gap-2">
+  <p></p>
+  <div class="d-grid gap-2">
     <button
-    type="submit"
-    class="btn btn-primary btn-block"
-    [disabled]="form.form.invalid">
-    Registrar
-  </button>
+      type="submit"
+      class="btn btn-primary btn-block"
+      [disabled]="form.form.invalid"
+    >
+      Registrar
+    </button>
   </div>
 </form>
