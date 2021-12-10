@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ProductsService } from 'src/app/common/services/product/products.service';
 
@@ -21,16 +21,23 @@ export class RegistrarSaidaComponent implements OnInit {
 
   constructor(
     private productService: ProductsService,
-    private router: Router
+    private router: Router,
+    private routeUrl: ActivatedRoute
   ) {}
 
   ngOnInit(): void {}
 
   async onSubmit() {
-    const response = await this.productService.postOutputProduct(
-      this.outputProductForm.value
-    );
-    console.log(response);
+    const id = this.routeUrl.snapshot.params.id;
+    if (!id) {
+      const response = await this.productService.postOutputProduct(
+        this.outputProductForm.value
+      );
+    } else {
+      const updatedOutputProduct = { ...this.outputProductForm.value, id: id };
+      await this.productService.updateOutputProduct(updatedOutputProduct);
+    }
+
     this.router.navigate(['saida-produtos']);
   }
 }
