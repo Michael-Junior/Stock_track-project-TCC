@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,6 +52,9 @@ import { AccountsPayableComponent } from './financial/accounts-payable/accounts-
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxMaskModule.forRoot({
+      showMaskTyped: true,
+    }),
   ],
   providers: [
     httpInterceptorProviders,
