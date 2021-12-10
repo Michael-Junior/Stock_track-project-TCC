@@ -97,6 +97,13 @@ export class ProductsService {
       .toPromise();
   }
 
+  async updateOutputProduct(
+    outputProduct: Record<string, string>
+  ): Promise<any> {
+    const token = window.localStorage.getItem('token');
+    console.log(outputProduct);
+  }
+
   private treatError(err: any) {
     let msgErro: string;
 

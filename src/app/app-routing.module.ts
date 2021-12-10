@@ -26,12 +26,16 @@ const routes: Routes = [
       { path: '', component: BackgroundComponent },
       { path: 'saida-produtos', component: SaidaProdutosComponent },
       { path: 'saida-produtos/registrar', component: RegistrarSaidaComponent },
+      {
+        path: 'saida-produtos/registrar/:id/editar',
+        component: RegistrarSaidaComponent,
+      },
       { path: 'product-registration', component: productsListaComponent },
       { path: 'stock', component: StockComponent },
-      { path: 'accounts-receivable', component: AccountsReceivableComponent},
-      { path: 'accounts-payable', component: AccountsPayableComponent},
+      { path: 'accounts-receivable', component: AccountsReceivableComponent },
+      { path: 'accounts-payable', component: AccountsPayableComponent },
       {
-        path: 'product-registration/register-product',        
+        path: 'product-registration/register-product',
         component: productsCadastroComponent,
       },
       {
