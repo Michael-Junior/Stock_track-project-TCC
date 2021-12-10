@@ -21,6 +21,8 @@ import { VendorFormComponent } from './vendor/form/vendor-form.component';
 import { CustomerListComponent } from './customers/customer-list/customer-list.component';
 import { CustomerFormComponent } from './customers/customer-form/customer-form.component';
 import { StockComponent } from './stock/stock.component';
+import { AccountsReceivableComponent } from './financial/accounts-receivable/accounts-receivable.component';
+import { AccountsPayableComponent } from './financial/accounts-payable/accounts-payable.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { StockComponent } from './stock/stock.component';
     CustomerListComponent,
     CustomerFormComponent,
     StockComponent,
+    AccountsReceivableComponent,
+    AccountsPayableComponent,
   ],
   imports: [
     BrowserModule,
