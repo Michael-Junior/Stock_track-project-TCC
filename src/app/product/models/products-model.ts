@@ -2,9 +2,12 @@ export interface Product {
   id: string;
   nome: string;
   descricao: string;
-  quantidade: number;
-  ativo: boolean;
   precoCusto: number;
   margemLucro: number;
-  status: string;
+  quantidade: number;
+  unidade: string;
+  ativo: boolean;
+  dataValidade: string;  
+  ultimaVenda: string;
+  status: boolean  
 }

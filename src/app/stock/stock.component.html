@@ -10,11 +10,10 @@
       <table class="table mb-0">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Nome do produto</th>
-            <th>Descrição detalhada</th>
+            <th>Código</th>
+            <th>Produto</th>
             <th>Saldo em estoque</th>
-            <th>Validade mais proxima</th>
+            <th>Vencimento mais proximo (Lote)</th>
           </tr>
         </thead>
         <tbody>
@@ -26,10 +25,10 @@
               {{ product.nome }}
             </td>
             <td>
-              {{ product.descricao }}
+              {{ product.quantidade }}
             </td>
             <td>
-              {{ product.quantidade }}
+              {{ product.dataValidade }}
             </td>
           </tr>
         </tbody>

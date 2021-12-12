@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from 'src/app/common/services/product/products.service';
-import { Product } from 'src/app/product/models/products-model';
+import { FinancialServiceReceber } from 'src/app/common/services/financial/financialReceber.service';
+
 
 @Component({
   selector: 'app-accounts-receivable',
@@ -8,21 +8,27 @@ import { Product } from 'src/app/product/models/products-model';
   styleUrls: ['./accounts-receivable.component.css']
 })
 export class AccountsReceivableComponent implements OnInit {
-  products: Product[] = [];
-  msgError: String = '';
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private financialService: FinancialServiceReceber) {}
 
-  ngOnInit() {
-    this.getProducts();
-  }
+  financialReceber = [
+    {
+      id: '',
+      numeroPedido: '',
+      valor: 0,
+      nomeDevedor: '',
+      cnpjDevedor: '',
+      enderecoDevedor: '',
+      telefoneDevedor: '',
+      vencimento: '',
+      status: '',
+    }
+  ]
 
-  getProducts() {
-    this.productsService.getProducts().subscribe(
-      (products) => {
-        this.products = products;
-      },
-      (error) => (this.msgError = <any>error)
-    );
+  ngOnInit(): void {
+    this.financialService
+    .getFinancialReceber()
+    .then((responseData) => (this.financialReceber = responseData));
+
   }
 }

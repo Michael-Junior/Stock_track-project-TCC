@@ -34,6 +34,7 @@ const routes: Routes = [
       { path: 'stock', component: StockComponent },
       { path: 'accounts-receivable', component: AccountsReceivableComponent },
       { path: 'accounts-payable', component: AccountsPayableComponent },
+      
       {
         path: 'product-registration/register-product',
         component: productsCadastroComponent,
