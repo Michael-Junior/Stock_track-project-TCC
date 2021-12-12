@@ -10,32 +10,36 @@
       <table class="table mb-0">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Nome do cliente</th>
+            <th>Nº Título</th>
+            <th>Cliente</th>
             <th>Endereço</th>
             <th>CNPJ</th>
-            <th>Emissão</th>
             <th>Vencimento</th>
-            <th>Valor</th>
+            <th>Valor R$</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let product of products">
+          <tr *ngFor="let financialReceber of financialReceber">
             <td>
-              {{ product.id }}
+              {{ financialReceber.numeroPedido }}
             </td>
             <td>
-              {{ product.nome }}
+              {{ financialReceber.nomeDevedor }}
             </td>
             <td>
-              {{ product.descricao }}
+              {{ financialReceber.enderecoDevedor }}
             </td>
             <td>
-              {{ product.quantidade }}
+              {{ financialReceber.cnpjDevedor }}
+            </td>
+            <td>
+              {{ financialReceber.vencimento | date: 'dd/MM/yyyy' }}
+            </td>
+            <td>
+              {{ financialReceber.valor | number : '1.2' }}
             </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-  

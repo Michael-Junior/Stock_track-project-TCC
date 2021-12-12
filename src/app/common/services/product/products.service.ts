@@ -117,14 +117,18 @@ export class ProductsService {
 
   private inicializeProduct(): Product {
     return {
-      id: '',
-      nome: '',
-      descricao: '',
-      quantidade: 0.0,
-      ativo: true,
-      precoCusto: 0.0,
-      margemLucro: 0.0,
-      status: '',
+  id: '',
+  nome: '',
+  descricao: '',
+  precoCusto: 0.0,
+  margemLucro: 0.0,
+  quantidade: 0.0,
+  unidade: '',
+  ativo: true,
+  dataValidade: '',
+  ultimaVenda: '',
+  status: true,
+
     };
   }
 }
