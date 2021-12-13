@@ -76,13 +76,15 @@ export class ProductsService {
 
   async getOutputProducts(): Promise<any> {
     const token = window.localStorage.getItem('token');
-    return await this.http
+    const response = await this.http
       .get(`${environment.baseUrl}/api/saida/produtos`, {
         headers: {
           Authorization: 'Bearer ' + token,
         },
       })
       .toPromise();
+    console.log(response);
+    return response;
   }
 
   async postOutputProduct(outputProduct: Record<string, string>): Promise<any> {
@@ -117,18 +119,17 @@ export class ProductsService {
 
   private inicializeProduct(): Product {
     return {
-  id: '',
-  nome: '',
-  descricao: '',
-  precoCusto: 0.0,
-  margemLucro: 0.0,
-  quantidade: 0.0,
-  unidade: '',
-  ativo: true,
-  dataValidade: '',
-  ultimaVenda: '',
-  status: true,
-
+      id: '',
+      nome: '',
+      descricao: '',
+      precoCusto: 0.0,
+      margemLucro: 0.0,
+      quantidade: 0.0,
+      unidade: '',
+      ativo: true,
+      dataValidade: '',
+      ultimaVenda: '',
+      status: true,
     };
   }
 }

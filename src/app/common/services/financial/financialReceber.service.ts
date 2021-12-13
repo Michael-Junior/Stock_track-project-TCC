@@ -5,16 +5,17 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-
 export class FinancialServiceReceber {
   constructor(private httpService: HttpClient) {}
 
   async getFinancialReceber(): Promise<any> {
     const token = window.localStorage.getItem('token');
-    return await this.httpService
+    const response = await this.httpService
       .get(`${environment.baseUrl}/api/saida/cobrancas`, {
         headers: { Authorization: 'Bearer ' + token },
       })
       .toPromise();
+    console.log(response);
+    return response;
   }
 }

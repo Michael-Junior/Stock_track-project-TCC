@@ -24,6 +24,8 @@ import { CustomerFormComponent } from './customers/customer-form/customer-form.c
 import { StockComponent } from './stock/stock.component';
 import { AccountsReceivableComponent } from './financial/accounts-receivable/accounts-receivable.component';
 import { AccountsPayableComponent } from './financial/accounts-payable/accounts-payable.component';
+import { EntradaListComponent } from './entrada-produtos/list/entrada-list.component';
+import { EntradaProdutoFormComponent } from './entrada-produtos/form/entrada-form.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { AccountsPayableComponent } from './financial/accounts-payable/accounts-
     StockComponent,
     AccountsReceivableComponent,
     AccountsPayableComponent,
+    EntradaListComponent,
+    EntradaProdutoFormComponent,
   ],
   imports: [
     BrowserModule,

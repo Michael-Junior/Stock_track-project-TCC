@@ -14,7 +14,13 @@ export class SaidaProdutosComponent implements OnInit {
       nome: '',
       lote: '',
       quantidade: '',
+      unidade: '',
       precoVenda: '',
+      total: '',
+      dataValidade: '',
+      dataSaida: '',
+      nomeCliente: '',
+      cnpjCliente: '',
     },
   ];
 

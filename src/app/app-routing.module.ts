@@ -17,6 +17,8 @@ import { CustomerFormComponent } from './customers/customer-form/customer-form.c
 import { StockComponent } from './stock/stock.component';
 import { AccountsReceivableComponent } from './financial/accounts-receivable/accounts-receivable.component';
 import { AccountsPayableComponent } from './financial/accounts-payable/accounts-payable.component';
+import { EntradaListComponent } from './entrada-produtos/list/entrada-list.component';
+import { EntradaProdutoFormComponent } from './entrada-produtos/form/entrada-form.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,11 @@ const routes: Routes = [
       { path: 'saida-produtos', component: SaidaProdutosComponent },
       { path: 'saida-produtos/registrar', component: RegistrarSaidaComponent },
       {
+        path: 'entrada-produtos/registrar',
+        component: EntradaProdutoFormComponent,
+      },
+      { path: 'entrada-produtos', component: EntradaListComponent },
+      {
         path: 'saida-produtos/registrar/:id/editar',
         component: RegistrarSaidaComponent,
       },
@@ -34,7 +41,7 @@ const routes: Routes = [
       { path: 'stock', component: StockComponent },
       { path: 'accounts-receivable', component: AccountsReceivableComponent },
       { path: 'accounts-payable', component: AccountsPayableComponent },
-      
+
       {
         path: 'product-registration/register-product',
         component: productsCadastroComponent,
