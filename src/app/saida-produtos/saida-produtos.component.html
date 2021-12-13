@@ -23,9 +23,14 @@
           <th>Código Movimentação</th>
           <th>Produto</th>
           <th>Lote</th>
-          <th>Quantidade Movimentada</th>
-          <th>Preço</th>
-          <th>Opções</th>
+          <th>Quantidade Vendida</th>
+          <th>Unidade de Medida</th>
+          <th>Preço Unitário</th>
+          <th>Total</th>
+          <th>Data da Validade</th>
+          <th>Data da Venda</th>
+          <th>Nome do Cliente</th>
+          <th>Cnpj do Cliente</th>
         </tr>
       </thead>
       <tbody>
@@ -43,16 +48,25 @@
             {{ product.quantidade }}
           </td>
           <td>
+            {{ product.unidade }}
+          </td>
+          <td>
             {{ product.precoVenda }}
           </td>
           <td>
-            <button
-              class="btn btn-primary btn-sm"
-              [routerLink]="['/saida-produtos/registrar', product.id, 'editar']"
-            >
-              Editar
-              <i class="fa fa-edit"></i>
-            </button>
+            {{ product.total }}
+          </td>
+          <td>
+            {{ product.dataValidade }}
+          </td>
+          <td>
+            {{ product.dataSaida }}
+          </td>
+          <td>
+            {{ product.nomeCliente }}
+          </td>
+          <td>
+            {{ product.cnpjCliente }}
           </td>
         </tr>
       </tbody>
