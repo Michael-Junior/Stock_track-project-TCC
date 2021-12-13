@@ -51,16 +51,16 @@
             {{ product.unidade }}
           </td>
           <td>
-            {{ product.precoVenda }}
+            {{ product.precoVenda | number: "1.2" }}
           </td>
           <td>
-            {{ product.total }}
+            {{ product.total | number: "1.2" }}
           </td>
           <td>
-            {{ product.dataValidade }}
+            {{ product.dataValidade | date: "dd/MM/yyyy" }}
           </td>
           <td>
-            {{ product.dataSaida }}
+            {{ product.dataSaida | date: "dd/MM/yyyy" }}
           </td>
           <td>
             {{ product.nomeCliente }}
