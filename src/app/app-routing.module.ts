@@ -19,6 +19,7 @@ import { AccountsReceivableComponent } from './financial/accounts-receivable/acc
 import { AccountsPayableComponent } from './financial/accounts-payable/accounts-payable.component';
 import { EntradaListComponent } from './entrada-produtos/list/entrada-list.component';
 import { EntradaProdutoFormComponent } from './entrada-produtos/form/entrada-form.component';
+import { UpdateProductComponent } from './product/update/update-product.component';
 
 const routes: Routes = [
   {
@@ -48,7 +49,7 @@ const routes: Routes = [
       },
       {
         path: 'product-registration/:id/editar',
-        component: productsCadastroComponent,
+        component: UpdateProductComponent,
       },
       { path: 'vendors', component: VendorListComponent },
       { path: 'vendors/registration', component: VendorFormComponent },
