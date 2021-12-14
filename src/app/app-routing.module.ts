@@ -20,6 +20,7 @@ import { AccountsPayableComponent } from './financial/accounts-payable/accounts-
 import { EntradaListComponent } from './entrada-produtos/list/entrada-list.component';
 import { EntradaProdutoFormComponent } from './entrada-produtos/form/entrada-form.component';
 import { UpdateProductComponent } from './product/update/update-product.component';
+import { InformacaoComponent } from './informacao/informacao.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       { path: '', component: BackgroundComponent },
+      { path: 'informacao', component: InformacaoComponent },
       { path: 'saida-produtos', component: SaidaProdutosComponent },
       { path: 'saida-produtos/registrar', component: RegistrarSaidaComponent },
       {
