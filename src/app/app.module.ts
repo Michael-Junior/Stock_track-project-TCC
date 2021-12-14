@@ -27,6 +27,7 @@ import { AccountsPayableComponent } from './financial/accounts-payable/accounts-
 import { EntradaListComponent } from './entrada-produtos/list/entrada-list.component';
 import { EntradaProdutoFormComponent } from './entrada-produtos/form/entrada-form.component';
 import { UpdateProductComponent } from './product/update/update-product.component';
+import { InformacaoComponent } from './informacao/informacao.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { UpdateProductComponent } from './product/update/update-product.componen
     EntradaListComponent,
     EntradaProdutoFormComponent,
     UpdateProductComponent,
+    InformacaoComponent,
   ],
   imports: [
     BrowserModule,
