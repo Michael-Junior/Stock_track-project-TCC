@@ -17,4 +17,16 @@ export class FinancialServicePagar {
       })
       .toPromise();
   }
+
+
+  async getRelatorioPagar(statDate: string, endDate: string): Promise<any> {
+    const token = window.localStorage.getItem('token');
+    return await this.httpService
+      .get(`${environment.baseUrl}/api/entrada/cobrancas/${statDate}/${endDate}`, {
+        headers: { Authorization: 'Bearer ' + token },
+      })
+      .toPromise();
+  }
+
+
 }

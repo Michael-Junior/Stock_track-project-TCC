@@ -28,6 +28,9 @@ import { EntradaListComponent } from './entrada-produtos/list/entrada-list.compo
 import { EntradaProdutoFormComponent } from './entrada-produtos/form/entrada-form.component';
 import { UpdateProductComponent } from './product/update/update-product.component';
 import { InformacaoComponent } from './informacao/informacao.component';
+import { EstoqueComponent } from './relatorios/estoque/estoque.component';
+import { RelatorioContasPagarComponent } from './relatorios/relatorio-contas-pagar/relatorio-contas-pagar.component';
+import { RelatorioContasReceberComponent } from './relatorios/relatorio-contas-receber/relatorio-contas-receber.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,9 @@ import { InformacaoComponent } from './informacao/informacao.component';
     EntradaProdutoFormComponent,
     UpdateProductComponent,
     InformacaoComponent,
+    EstoqueComponent,
+    RelatorioContasPagarComponent,
+    RelatorioContasReceberComponent,
   ],
   imports: [
     BrowserModule,
