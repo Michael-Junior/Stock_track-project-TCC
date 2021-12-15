@@ -2,7 +2,7 @@
   <div class="card-header">
     <div class="d-flex justify-content-between">
       <div>
-        <a class="nav-link disabled" href="#">Movimentações de Entrada</a>
+        <a class="nav-link disabled" href="#">Movimentações de Saída</a>
       </div>
       <form novalidate (ngSubmit)="onSubimit()" [formGroup]="dateForm">
         <div class="row">
@@ -48,13 +48,13 @@
         <th>Lote</th>
         <th>Data de Fabricacao</th>
         <th>Data de Validade</th>
-        <th>Comprador</th>
-        <th>Preço de Custo</th>
-        <th>Data da Compra</th>
+        <th>Vendedor</th>
+        <th>Preço de Venda</th>
+        <th>Data da Venda</th>
         <th>Quantidade</th>
         <th>Total</th>
-        <th>Nome do Fornecedor</th>
-        <th>CNPJ do Fornecedor</th>
+        <th>Nome do Cliente</th>
+        <th>CNPJ do Cliente</th>
       </tr>
     </thead>
     <tbody>
@@ -78,10 +78,10 @@
           {{ product.funcionario }}
         </td>
         <td>
-          {{ product.precoCusto | number: "1.2" }}
+          {{ product.precoVenda | number: "1.2" }}
         </td>
         <td>
-          {{ product.dataEntrada | date: "dd/MM/yyyy" }}
+          {{ product.dataSaida | date: "dd/MM/yyyy" }}
         </td>
         <td>
           {{ product.quantidade }}
@@ -90,10 +90,10 @@
           {{ product.total | number: "1.2" }}
         </td>
         <td>
-          {{ product.nomeFornecedor }}
+          {{ product.nomeCliente }}
         </td>
         <td>
-          {{ product.cnpjFornecedor }}
+          {{ product.cnpjCliente }}
         </td>
       </tr>
     </tbody>

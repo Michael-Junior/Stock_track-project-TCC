@@ -31,6 +31,7 @@ import { InformacaoComponent } from './informacao/informacao.component';
 import { RelatorioContasPagarComponent } from './relatorios/relatorio-contas-pagar/relatorio-contas-pagar.component';
 import { RelatorioContasReceberComponent } from './relatorios/relatorio-contas-receber/relatorio-contas-receber.component';
 import { EstoqueEntradasComponent } from './relatorios/estoque-entradas/estoque-entradas.component';
+import { RelatorioSaidasComponent } from './relatorios/relatorio-saidas/relatorio-saidas.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { EstoqueEntradasComponent } from './relatorios/estoque-entradas/estoque-
     RelatorioContasPagarComponent,
     RelatorioContasReceberComponent,
     EstoqueEntradasComponent,
+    RelatorioSaidasComponent,
   ],
   imports: [
     BrowserModule,
