@@ -18,4 +18,16 @@ export class FinancialServiceReceber {
     console.log(response);
     return response;
   }
+
+  async getRelatorioReceber(statDate: string, endDate: string): Promise<any> {
+    const token = window.localStorage.getItem('token');
+    return await this.httpService
+      .get(
+        `${environment.baseUrl}/api/saida/cobrancas/${statDate}/${endDate}`,
+        {
+          headers: { Authorization: 'Bearer ' + token },
+        }
+      )
+      .toPromise();
+  }
 }

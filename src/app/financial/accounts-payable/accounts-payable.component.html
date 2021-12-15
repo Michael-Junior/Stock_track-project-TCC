@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let financialPagar of financialPagar">
+        <tr *ngFor="let financialPagar of financialPagarList.cobrancas">
           <td>
             {{ financialPagar.numeroPedido }}
           </td>
@@ -33,10 +33,10 @@
             {{ financialPagar.cnpjFornecedor }}
           </td>
           <td>
-            {{ financialPagar.vencimento | date: 'dd/MM/yyyy' }}
+            {{ financialPagar.vencimento | date: "dd/MM/yyyy" }}
           </td>
           <td>
-            {{ financialPagar.valor | number : '1.2' }}
+            {{ financialPagar.valor | number: "1.2" }}
           </td>
         </tr>
       </tbody>
