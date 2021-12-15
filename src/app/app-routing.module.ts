@@ -23,6 +23,7 @@ import { UpdateProductComponent } from './product/update/update-product.componen
 import { InformacaoComponent } from './informacao/informacao.component';
 import { RelatorioContasPagarComponent } from './relatorios/relatorio-contas-pagar/relatorio-contas-pagar.component';
 import { RelatorioContasReceberComponent } from './relatorios/relatorio-contas-receber/relatorio-contas-receber.component';
+import { EstoqueEntradasComponent } from './relatorios/estoque-entradas/estoque-entradas.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,7 @@ const routes: Routes = [
       { path: 'accounts-payable', component: AccountsPayableComponent },
       { path: 'relatorio-contas-pagar', component: RelatorioContasPagarComponent },
       { path: 'relatorio-contas-receber', component: RelatorioContasReceberComponent },
+      { path: 'relatorio-entradas-produtos', component: EstoqueEntradasComponent},
 
       {
         path: 'product-registration/register-product',
