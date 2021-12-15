@@ -21,6 +21,8 @@ import { EntradaListComponent } from './entrada-produtos/list/entrada-list.compo
 import { EntradaProdutoFormComponent } from './entrada-produtos/form/entrada-form.component';
 import { UpdateProductComponent } from './product/update/update-product.component';
 import { InformacaoComponent } from './informacao/informacao.component';
+import { RelatorioContasPagarComponent } from './relatorios/relatorio-contas-pagar/relatorio-contas-pagar.component';
+import { RelatorioContasReceberComponent } from './relatorios/relatorio-contas-receber/relatorio-contas-receber.component';
 
 const routes: Routes = [
   {
@@ -44,6 +46,8 @@ const routes: Routes = [
       { path: 'stock', component: StockComponent },
       { path: 'accounts-receivable', component: AccountsReceivableComponent },
       { path: 'accounts-payable', component: AccountsPayableComponent },
+      { path: 'relatorio-contas-pagar', component: RelatorioContasPagarComponent },
+      { path: 'relatorio-contas-receber', component: RelatorioContasReceberComponent },
 
       {
         path: 'product-registration/register-product',
