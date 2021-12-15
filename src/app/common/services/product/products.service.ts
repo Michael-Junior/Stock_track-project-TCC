@@ -28,12 +28,22 @@ export class ProductsService {
   async getProductsRelatorio(statDate: string, endDate: string): Promise<any> {
     const token = window.localStorage.getItem('token');
     return await this.http
-      .get(`${environment.baseUrl}/api/entrada/produtos/${statDate}/${endDate}`, {
+      .get(
+        `${environment.baseUrl}/api/entrada/produtos/${statDate}/${endDate}`,
+        {
+          headers: { Authorization: 'Bearer ' + token },
+        }
+      )
+      .toPromise();
+  }
+  async getSaidaRelatorio(statDate: string, endDate: string): Promise<any> {
+    const token = window.localStorage.getItem('token');
+    return await this.http
+      .get(`${environment.baseUrl}/api/saida/produtos/${statDate}/${endDate}`, {
         headers: { Authorization: 'Bearer ' + token },
       })
       .toPromise();
   }
-
 
   getProduct(id: string): Observable<Product> {
     if (id === '') {
